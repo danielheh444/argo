@@ -1,7 +1,7 @@
 
 image: danielheh/nginx-k8s:1.0.0
 
-replicaCount: 3
+replicaCount: 1
 
 typeService: LoadBalancer
 
