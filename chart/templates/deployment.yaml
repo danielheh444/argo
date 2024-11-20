@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app: {{ .Release.Name }}-deployment
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      project: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        project: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-web
+          image: {{ .Values.image }}
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: {{ .Values.container.requestsCpu }}
+              memory: {{ .Values.container.requestsMemory }}
+            limits:
+              cpu: {{ .Values.container.limitsCpu }}
+              memory: {{ .Values.container.limitsMemory }}
