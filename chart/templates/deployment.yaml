@@ -19,10 +19,3 @@ spec:
           image: {{ .Values.image }}
           ports:
             - containerPort: 80
-          resources:
-            requests:
-              cpu: {{ .Values.container.requestsCpu }}
-              memory: {{ .Values.container.requestsMemory }}
-            limits:
-              cpu: {{ .Values.container.limitsCpu }}
-              memory: {{ .Values.container.limitsMemory }}
