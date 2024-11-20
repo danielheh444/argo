@@ -1,16 +1,16 @@
 
 image: danielheh/nginx-k8s:1.0.0
 
-replicaCount: 2
+replicaCount: 1
 
 typeService: LoadBalancer
 
-minCountRep: 1
-maxCountRep: 2
+#minCountRep: 1
+#maxCountRep: 2
 
-container:
-  requestsCpu: "100m"
-  requestsMemory: "128Mi"
-  limitsCpu: "350m"
-  limitsMemory: "256Mi"
+#container:
+#  requestsCpu: "100m"
+#  requestsMemory: "128Mi"
+#  limitsCpu: "350m"
+#  limitsMemory: "256Mi"
 
