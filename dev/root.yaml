@@ -1,0 +1,23 @@
+apiVersion: ...
+kind: Application
+metadata:
+  name: root
+  namespace: argocd
+  finalizers:
+    - ...
+spec:
+  destination:
+    name: in-cluster
+    namespace: argocd
+  source:
+    path:
+    repoURL: git@github.com:danielheh444/argo.git
+    targetRevision: HEAD
+  project:
+    default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+
