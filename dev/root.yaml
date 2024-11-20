@@ -1,17 +1,17 @@
-apiVersion: ...
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root
   namespace: argocd
   finalizers:
-    - ...
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: in-cluster
     namespace: argocd
   source:
-    path:
-    repoURL: git@github.com:danielheh444/argo.git
+    path: "dev/applications"
+    repoURL: "git@github.com:danielheh444/argo.git"
     targetRevision: HEAD
   project:
     default
@@ -19,5 +19,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
-
