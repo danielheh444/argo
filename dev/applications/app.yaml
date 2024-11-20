@@ -14,8 +14,8 @@ spec:
     repoURL: "git@github.com:danielheh444/argo.git"
     targetRevision: HEAD
     helm:
-      valuesFiles:
-        - values_dev.yaml
+      valueFiles:
+      - values_dev.yaml
   project: default
   syncPolicy:
     automated:
